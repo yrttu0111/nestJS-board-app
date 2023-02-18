@@ -20,8 +20,8 @@ import * as config from 'config'
         })
     }
     async validate(payload) {
-        const {username} = payload;
-        const user : User = await this.userRepository.findOneBy({username});
+        const {userId} = payload;
+        const user : User = await this.userRepository.findOneBy({userId});
 
         if(!user){
             throw new UnauthorizedException();

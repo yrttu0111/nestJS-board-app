@@ -1,17 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsString, Matches, MaxLength, MinLength } from "class-validator";
 
-export class AuthCredentialDto {
-    @ApiProperty({
-        example: 'jinta',
-        description: '유저 이름 4~20',
-        required: true,
-      })
-    @IsString()
-    @MinLength(4)
-    @MaxLength(20)
-    username: string;
-
+export class AuthSignInDto {
     @ApiProperty({
         example: 'jinta',
         description: '유저 아이디 4~20',
@@ -24,7 +14,7 @@ export class AuthCredentialDto {
 
     @ApiProperty({
         example: '123123asd',
-        description: '유저 비밀번호 4~20',
+        description: '유저 비밀번호4~20',
         required: true,
       })
     @IsString()
